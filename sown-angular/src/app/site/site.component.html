@@ -1,0 +1,35 @@
+<div class="site-wrapper">
+  <div class="conent-wrapper">
+    <div class="outer-player-wrapper darkest-bg">
+      <div class="video">
+        <app-videoplayer [videoId]="id"></app-videoplayer>
+      </div>
+      <div class="controls bright-bg">
+        <h3 class="light-text">WiiSown</h3>
+
+        <div>Browse:</div>
+
+        <a
+          *ngFor="let ctrl of controls"
+          class="control-element light-text darkest-bg"
+          [routerLink]="getNavAction(ctrl.url)"
+        >
+          {{ ctrl.text }}
+        </a>
+
+        <div>Select:</div>
+
+        <div class="control-element darkest-bg">
+          <input
+            type="number"
+            class="light-text darkest-bg"
+            [min]="minId"
+            [max]="maxId"
+            [value]="id"
+            (change)="onInputChange($event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

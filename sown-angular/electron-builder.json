@@ -1,0 +1,32 @@
+{
+    "productName": "WiiSown",
+    "asar": false,
+    "directories": {
+        "output": "../builds"
+    },
+    "files": [
+        "**/*",
+        "!**/*.ts",
+        "!**/*.json",
+        "!**/*.md",
+        "!**/*.yml",
+        "!*.code-workspace",
+        "!.prettierrc",
+        "!node_modules/",
+        "!src/",
+        "!e2e/",
+        "!hooks/",
+        "!karma.conf.js",
+        {
+            "from": "dist",
+            "to": "./dist",
+            "filter": ["**/*"]
+        }
+    ],
+    "win": {
+        "target": ["zip"]
+    },
+    "linux": {
+        "target": ["zip"]
+    }
+}
